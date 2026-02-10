@@ -103,5 +103,31 @@ def pattren9(n):
 
     return " "
 
-s5 = pattren9(5)
-print(s5)
+# s5 = pattren9(5)
+# print(s5)
+
+class double_pyramid:
+    def erect_pyramid(self,n):
+        for i in range(n):
+            print(" " * (n - i - 1), end="")
+
+            print("*" * (2 * i + 1), end="")
+
+            print(" " * (n- i - 1))
+
+    def inverted_pyramid(self,n):
+        for i in range(n):
+            print(" " * i, end="")
+            print("*" * (2 * n - (2 * i + 1)), end="")
+            print(" " * i)
+
+
+
+
+s10 = double_pyramid()
+s10.erect_pyramid(5)
+s10.inverted_pyramid(5)
+
+
+
+

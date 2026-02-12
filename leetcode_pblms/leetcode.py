@@ -1,4 +1,5 @@
 # solution with O(n)**2
+from jedi.plugins.django import mapping
 
 
 def find_a_target(arr,target):
@@ -23,5 +24,21 @@ def find_a_target1(arr,target):
             return [seen[ele],idx]
         seen[num] = idx
 
-s = find_a_target1(nums,target)
-print(s)
+# s = find_a_target1(nums,target)
+# print(s)
+
+def is_valid(s):
+     mapping = {")":"(","]":"[","}":"{"}
+     stack = []
+     for char in s:
+         if char in mapping:
+             if not stack:
+                 return False
+             top = stack.pop()
+             if mapping[char] != top:
+                 return False
+         else:
+             stack.append(char)
+     return  not stack
+s = "](()))"
+print(is_valid(s))

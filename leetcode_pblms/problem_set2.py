@@ -20,3 +20,12 @@ def first_duplicate(s):
              return i
         seen.add(i)
     return None
+
+
+def count_unique(s):
+    seen = set()
+
+    for ch in s:
+        if ch not in seen:
+            seen.add(ch)
+    return len(seen)

@@ -29,3 +29,14 @@ def count_unique(s):
         if ch not in seen:
             seen.add(ch)
     return len(seen)
+
+
+def print_duplicate(s):
+    seen = set()
+    for ch in s:
+        if ch in seen:
+            print(f"duplicate found at {ch}")
+
+        seen.add(ch)
+
+    

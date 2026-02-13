@@ -40,5 +40,13 @@ def is_valid(s):
          else:
              stack.append(char)
      return  not stack
+
 s = "](()))"
 print(is_valid(s))
+
+def longest_substring(s):
+    s1=""
+    for i in s:
+        if i not in s1:
+            s1+=i
+        return s1

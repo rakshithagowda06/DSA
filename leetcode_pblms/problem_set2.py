@@ -39,4 +39,41 @@ def print_duplicate(s):
 
         seen.add(ch)
 
+
+
+def print_substring(s):
+    seen = set()
+    left = 0
+    max_length = 0
+
+    for right in range(len(s)):
+        while s[right] in seen:
+            s[left].remove()
+            left +=1
+        
+        seen.add(s[right])
+        max_length = max(max_length,right-left+1)
+    return max_length
+
+
+
+def count_unique(s):
+    seen = set()
+    duplicate = set()
+    for ch in s:
+        if ch in seen:
+            duplicate.add(ch)
+        seen.add(ch)
+    return len(seen)
+        
+
+
+from collections import Counter
+
+def first_unique(s):
+    Count = Counter(s)
+    for ch in s:
+        if Count[ch] == 1:
+            return ch
+    return None
     

@@ -95,3 +95,19 @@ def is_anagram(s1, s2):
         s2_freq[char] = s2_freq.get(char, 0) + 1
     
     return s1_freq == s2_freq
+
+
+
+class Solution(object):
+    def findClosestNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        close = nums[0]
+        for num in nums:
+            if abs(num) < abs(close):
+                close = num
+            elif abs(close) == abs(num) and num > close:
+                close = num
+        return close

@@ -80,3 +80,18 @@ class Solution(object):
             lookup[nums[i]] = i
         
 
+def is_anagram(s1, s2):
+    # Quick check: different lengths can't be anagrams
+    if len(s1) != len(s2):
+        return False
+    
+    s1_freq = {}
+    s2_freq = {}
+    
+    for char in s1:
+        s1_freq[char] = s1_freq.get(char, 0) + 1
+    
+    for char in s2:
+        s2_freq[char] = s2_freq.get(char, 0) + 1
+    
+    return s1_freq == s2_freq

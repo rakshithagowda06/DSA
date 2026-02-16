@@ -64,3 +64,19 @@ def print_substring(s):
         seen.add(s[right])
         max_length = max(max_length,right-left+1)
     return max_length
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        lookup = {}
+        for i in range(len(nums)):
+            compliment = target - nums[i]
+            if compliment in lookup:
+                return [lookup[compliment],i]
+            lookup[nums[i]] = i
+        
+

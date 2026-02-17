@@ -154,4 +154,16 @@ class Solution(object):
         return total
 
         
-        
+# Top K Frequent Elements
+
+def get_top_k_elements(nums,k):
+    freq = {}
+
+    for num in nums:
+        freq[num] = freq.get(num,0) + 1
+    get_sorted_list = sorted(freq.items(),lambda x:x[1], reverse=True)
+    result = []
+
+    for i in range(k):
+        result.append(sorted(freq[i][0]))
+    return result

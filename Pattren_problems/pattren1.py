@@ -30,7 +30,9 @@ for i in range(len(nums)):
     if compliment in lookup:
         print([lookup[i],i])
     lookup[nums[i]] = i
+
 # Pattern 4: Finding the signature of word
+"""use a word to join"""
 words = []
 for word in words:
     "".join(sorted(word))

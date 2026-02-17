@@ -165,5 +165,5 @@ def get_top_k_elements(nums,k):
     result = []
 
     for i in range(k):
-        result.append(sorted(freq[i][0]))
+        result.append(get_sorted_list[i][0])
     return result

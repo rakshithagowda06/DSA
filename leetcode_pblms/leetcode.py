@@ -187,3 +187,42 @@ class Solution(object):
                     start +=1
                 longest = max(length,longest)
         return longest
+    
+#Product of Array Except Self
+
+
+class Solution(object):
+    def productExceptSelf(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        n = len(nums)
+        left = [1]*n
+        right = [1]*n
+        result = [1] * n
+
+        left_product = 1
+        
+        
+        for i in range(n):
+            left[i] = left_product
+            left_product *= nums[i]
+
+        right_product = 1
+
+        for j in range(n-1,-1,-1):
+            right[j] = right_product
+            right_product *= nums[j]
+
+        for k in range(n):
+            result[k] = left[k] * right[k]
+        return result
+
+
+         
+
+
+
+
+        

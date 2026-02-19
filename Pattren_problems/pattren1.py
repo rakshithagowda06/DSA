@@ -36,3 +36,41 @@ for i in range(len(nums)):
 words = []
 for word in words:
     "".join(sorted(word))
+
+# Pattern 5: Two pointers
+# Opposite Direction (Left & Right)
+arr = []
+left = arr[0]
+right = len(arr)-1
+while left<right:
+    # Do somehting with arr[left] and arr[right]
+    # Move pointers based on condiition
+    left += 1
+    right -= 1
+
+# Use cases: Palindrome check, Two Sum in sorted array, Container with most water
+
+# Pattern 6: Same Direction (Slow & Fast)
+
+slow = 0
+right = 0
+
+for fast in range(len(arr)):
+    # Do something
+    # Move slow only when condiiton is set
+    if "condition":
+        slow +=1
+
+# Use cases: Remove duplicates, Move zeros
+
+# Pattern 3: Sliding Window
+
+left = 0
+
+for right in range(len(arr)):
+    # Expand window by adding arr[right]
+    while "window_condition_violated":
+        # Shrink window from left
+        left +=1
+
+

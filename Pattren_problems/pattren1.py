@@ -73,4 +73,6 @@ for right in range(len(arr)):
         # Shrink window from left
         left +=1
 
+# Pattren 4
+
 

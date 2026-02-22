@@ -118,3 +118,6 @@ if queue:
 size = len(queue)
 
 
+""" Key points to remember while solving the question"""
+# if it is a close brace pop from stack
+# if it is open brace add it stack

@@ -280,4 +280,26 @@ class Solution(object):
             else:
                 right -= 1
         return max_water
+    
+
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        mapping = {'}' :'{',']':'[',')':'('}
+        stack = []
+        for i in s:
+            # check its a closed brace
+            if i in mapping:
+                # check if stack is empty or top doesn't match 
+                if not stack or stack[-1] != mapping[i]:
+                    return False
+                stack.pop()
+            else:
+                stack.append(i)
+        return len(stack)==0
+
+
         

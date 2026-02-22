@@ -73,6 +73,48 @@ for right in range(len(arr)):
         # Shrink window from left
         left +=1
 
-# Pattren 4
+# Stack(LIFO = Last in First out)
+
+stack = []
+stack.append(5)
+stack.append(10)
+stack.append(15)
+#stack = [5,10,15]
+top = stack.pop()
+# returns 15
+top = stack[-1] # wil get top without removing
+
+# check if stack is empty
+if stack:
+    print("stack is not empty")
+# to get a size
+
+size = len(stack)
+
+# CONCEPT: Queue (FIFO - First In, First Out)
+# Think of a line at a store - first person in line is served first.
+
+from collections import deque
+
+queue = deque()
+
+queue.append(5)
+queue.append(10)
+queue.append(15)
+
+# queue = [5,10,15]
+front = queue.popleft()
+# returns 5
+
+# Peek front
+front = queue[0]  # Returns 10
+
+
+# Check if empty
+if queue:
+    print("Not empty")
+
+# Size
+size = len(queue)
 
 

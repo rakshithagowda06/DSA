@@ -183,3 +183,34 @@ while current:
     prev = current
     current = next_node
     
+
+""" A tree where each node has atmost two children(left and right)"""
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left    # Left child
+        self.right = right  # Right child
+
+
+## 💡 **Common Tree Traversals:**
+
+### **1. Inorder (Left → Root → Right)**
+
+   #    1
+   #   / \
+   #   2   3
+     
+Inorder: [2, 1, 3]
+
+### **2. Preorder (Root → Left → Right)**
+Preorder: [1, 2, 3]
+
+### **3. Postorder (Left → Right → Root)**
+Postorder: [2, 3, 1]
+
+### **4. Level Order (BFS - layer by layer)**
+LevelOrder: [1, 2, 3]
+
+
+    

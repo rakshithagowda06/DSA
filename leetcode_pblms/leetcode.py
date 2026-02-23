@@ -352,3 +352,18 @@ class MinStack(object):
 # obj.pop()
 # param_3 = obj.top()
 # param_4 = obj.getMin()
+
+
+def daily_tempreature(temps):
+    n = len(temps)
+    answer = [0] * n
+    stack = []
+
+    for i in range(n):
+        while stack and temps[i] > temps[stack[-1]]:
+            prev_day = stack.pop()
+            answer[prev_day] = i - prev_day
+        stack.append(i)
+    return stack
+
+

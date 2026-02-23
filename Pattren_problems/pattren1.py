@@ -121,3 +121,9 @@ size = len(queue)
 """ Key points to remember while solving the question"""
 # if it is a close brace pop from stack
 # if it is open brace add it stack
+
+
+
+"""key points to remember while solving the temprature problem"""
+# Instead of looking forward tempreature for each day,we use a stack to remember past days that are still waiting for warmer day
+

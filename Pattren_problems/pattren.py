@@ -131,3 +131,6 @@ s10.inverted_pyramid(5)
 
 
 
+
+
+

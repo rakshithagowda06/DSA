@@ -127,3 +127,59 @@ size = len(queue)
 """key points to remember while solving the temprature problem"""
 # Instead of looking forward tempreature for each day,we use a stack to remember past days that are still waiting for warmer day
 
+
+""" Leetcode questions to understand """
+# Definig the Node
+
+class ListNode:
+    def __init__(self,val,next=None):
+        val = self.val
+        next = self.next
+
+# Creating 1 -> 2 -> 3 -> None
+
+node3 = ListNode(3)
+node2 = ListNode(2,node3)
+node1 = ListNode(1,node2)
+head = node1
+
+# Traversing
+
+curr = head
+
+while curr:
+    print(curr.val)
+    curr = curr.next
+
+# Common Patterns 
+
+# Pattern 1 : Two pointers(Slow and Fast)
+
+slow = head
+fast = head
+
+while fast and fast.next:
+    slow = slow.next  # Move one step
+    fast = fast.next.next # Move 2 steps
+
+# Use acses : Find middle,detect cycle
+
+
+# Pattern 2 : Dummy Node
+dummy =ListNode(0)
+dummy.next = head
+
+# Work with dummy to avoid edge case
+# Use case : When you might modify head
+
+# Pattern 3 : Reversing
+
+prev = None
+current = head
+
+while current:
+    next_node = current.next
+    current.next = prev
+    prev = current
+    current = next_node
+    

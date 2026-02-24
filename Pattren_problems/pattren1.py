@@ -235,3 +235,18 @@ def preorder(root):
 
 # Same as: if root == None
 # If there's no node, the depth is 0
+
+
+# Graphs
+
+from collections import deque
+
+queue = deque(["Alice"])
+print(queue)
+queue.append('Bob')
+print(queue)
+queue.append('Charlie')
+print(queue)
+first = queue.popleft()
+print(first)
+print(queue)

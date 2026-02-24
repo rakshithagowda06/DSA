@@ -250,3 +250,24 @@ print(queue)
 first = queue.popleft()
 print(first)
 print(queue)
+
+
+# BFS : Breadth first search - BFS visits level by level
+
+
+from collections import deque
+
+def bfs(graph,start):
+    visited = set()
+    queue = deque([start])
+    visited.add(start)
+
+    while queue:
+        node = queue.popleft()
+
+        for neighbour in graph[node]:
+            if neighbour not in visited:
+                visited.add(neighbour)
+                queue.append(neighbour)
+    
+

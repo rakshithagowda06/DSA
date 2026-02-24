@@ -213,4 +213,25 @@ Postorder: [2, 3, 1]
 LevelOrder: [1, 2, 3]
 
 
-    
+# Inorder(Recursive)
+
+def inorder(root):
+    if not root:
+        return
+    inorder(root.left)
+    print(root.val)
+    inorder(root.right)
+
+# Preorder (Recursive)
+
+def preorder(root):
+    if not root:
+        return
+    print(root.val) #Root
+    preorder(root.left) #left
+    preorder(root.right) #right
+
+# What does if not root mean?
+
+# Same as: if root == None
+# If there's no node, the depth is 0

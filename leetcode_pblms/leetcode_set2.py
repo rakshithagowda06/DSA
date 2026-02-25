@@ -48,3 +48,43 @@ root.left.left = TreeNode(1)
 root.left.right = TreeNode(3)
 root.right.left = TreeNode(6)
 root.right.right = TreeNode(9)
+
+
+
+# Grapgh Problem
+
+from collections import deque
+class Solution(object):
+    def numIslands(self, grid):
+        """
+        :type grid: List[List[str]]
+        :rtype: int
+        """
+        rows = len(grid)
+        cols = len(grid[0])
+        islands = 0
+
+        def bfs(r,c):
+            queue = deque()
+            queue.append((r,c))
+            grid[r][c] = '0'
+            while queue:
+                row ,col = queue.popleft()
+                directions = [(1,0),(-1,0),(0,1),(0,-1)]
+                for dr,dc in directions:
+                    new_row = row + dr
+                    new_col = col + dc
+                    if (new_row >= 0 and new_row < rows 
+                        and new_col >=0 and new_col < cols
+                        and grid[new_row][new_col] == '1'):
+
+                        queue.append((new_row,new_col))
+                        grid[new_row][new_col] = '0'
+
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == '1':
+                    islands += 1
+                    bfs(r,c)
+        return islands            
+        

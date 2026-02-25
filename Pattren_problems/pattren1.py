@@ -271,3 +271,18 @@ def bfs(graph,start):
                 queue.append(neighbour)
     
 
+# To check whether the rows and cols are valid in island problem 
+
+
+# Example 1
+
+rows = 2
+cols = 2
+
+new_row = 1
+new_col = 0
+
+if new_row >= 0 and new_row < rows and new_col >= 0 and new_col < cols:
+    print("Valid !")
+else:
+    print("Out of bounds")

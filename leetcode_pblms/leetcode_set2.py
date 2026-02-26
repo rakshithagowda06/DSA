@@ -109,3 +109,16 @@ class Solution(object):
         for i in range(2,n):
             dp[i] = max(nums[i]+dp[i-2],dp[i-1])
         return dp[n-1]
+
+def firstBadversion(n):
+    left = 1
+    right = n
+
+    while left <= right:
+        mid = (left+right)//2
+
+        if isBadVersion(mid):
+            right = mid - 1
+        else:
+            left = mid + 1
+    return left

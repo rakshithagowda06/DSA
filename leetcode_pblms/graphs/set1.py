@@ -6,7 +6,7 @@ def canFinish(numCourses, prerequisites):
     graph = {i: [] for i in range(numCourses)}
     
     # fill the graph with prerequisites
-    # [1,0] means 0 → 1 (take 0 first, then 1)
+    # [1,0] means 0 → 1 (take 0 f   irst, then 1)
     for a, b in prerequisites:
         graph[b].append(a)
     

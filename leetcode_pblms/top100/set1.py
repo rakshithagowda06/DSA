@@ -5,7 +5,7 @@ def get_max_length(nums):
     num_set = set(nums)
     max_length = 0  # Track maximum!
     
-    for num in nums:
+    for num in num_set:
         if num - 1 not in num_set:  # Found a start
             length = 1
             current = num  # Use a different variable!

@@ -37,3 +37,17 @@ def maxSubArray(nums):
         max_sum = max(max_sum, current_sum)
     
     return max_sum
+
+
+
+def max_sum(nums):
+    max_sum = float('-inf')
+    current_sum = 0 
+    n = len(nums)
+
+    for i in range(n):
+        current_sum = max(num[i],current_sum + nums[i])
+        max_sum = max(max_sum,current_sum)
+    return max_sum
+
+        

@@ -67,3 +67,29 @@ class Solution(object):
                 i+=1
         return i == len(s)
         
+
+def longestCommonPrefix(strs):
+    # Edge case : empty string
+
+    if not strs:
+        return ""
+    
+    prefix = ""
+    
+    # Check each character posiiton in first string
+    for i in range(len(strs[0])):
+        char1 = str[0][i]  # Current character from first string
+
+        # Check if All other strings have same char at position i
+        for string in strs[1:]:  # Check from second string onwards
+            # If string is too short OR Character doesn't match
+            if i >= len(string) or string[i] != char1:
+                return prefix
+            
+        # All strings matched this character
+
+        prefix += char1
+    
+    return prefix
+
+

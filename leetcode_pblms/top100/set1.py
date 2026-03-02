@@ -93,3 +93,18 @@ def longestCommonPrefix(strs):
     return prefix
 
 
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        min_price = float('inf')
+        max_profit = 0
+
+        for i in prices:
+            min_price = min(i,min_price)
+            profit = i - min_price
+            max_profit = max(profit,max_profit)
+        return max_profit
+        

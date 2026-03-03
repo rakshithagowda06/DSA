@@ -108,3 +108,30 @@ class Solution(object):
             max_profit = max(profit,max_profit)
         return max_profit
         
+class Solution(object):
+    def summaryRanges(self, nums):
+        if not nums:
+            return []
+        
+        result = []
+        start = nums[0]   # start of current range
+        
+        for i in range(1, len(nums)):
+            # if sequence breaks
+            if nums[i] != nums[i - 1] + 1:
+                # single number range
+                if start == nums[i - 1]:
+                    result.append(str(start))
+                else:
+                    result.append(str(start) + "->" + str(nums[i - 1]))
+                
+                # start new range
+                start = nums[i]
+        
+        # handle last range after loop ends
+        if start == nums[-1]:
+            result.append(str(start))
+        else:
+            result.append(str(start) + "->" + str(nums[-1]))
+        
+        return result

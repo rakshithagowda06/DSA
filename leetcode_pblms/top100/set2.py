@@ -100,3 +100,18 @@ class Solution(object):
             if magazineFreq[char] < count:
                 return False
         return True 
+
+
+def longestConsecutive(nums):
+    num_set = set(nums)  # O(n) time to create set
+    max_length = 0
+
+    for num in num_set:  # O(n) time to iterate through set
+        if (num - 1) not in num_set:  # Only start counting if it's the start of a sequence
+            current = num
+            length = 1
+            while (current + 1) in num_set:  # O(k) time where k is length of current sequence
+                length += 1
+                current += 1
+                max_length = max(max_length, length)  # Update max length after counting the sequence
+    return max_length

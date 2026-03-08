@@ -115,3 +115,43 @@ def longestConsecutive(nums):
                 current += 1
                 max_length = max(max_length, length)  # Update max length after counting the sequence
     return max_length
+
+
+class Solution:
+    def solveSudoku(self, board):
+        def is_valid(board, r, c, num):
+            # check row
+            for i in range(9):
+                if board[r][i] == num:
+                    return False
+            
+            # check column
+            for i in range(9):
+                if board[i][c] == num:
+                    return False
+            
+            # check 3x3 box
+            start_row = (r // 3) * 3
+            start_col = (c // 3) * 3
+            
+            for i in range(start_row, start_row + 3):
+                for j in range(start_col, start_col + 3):
+                    if board[i][j] == num:
+                        return False
+            
+            return True
+
+        def backtrack(board):
+            for r in range(9):
+                for c in range(9):
+                    if board[r][c] == '.':
+                        for num in map(str, range(1, 10)):
+                            if is_valid(board, r, c, num):
+                                board[r][c] = num
+                                if backtrack(board):
+                                    return True
+                                board[r][c] = '.'
+                        return False
+            return True
+        
+        backtrack(board)

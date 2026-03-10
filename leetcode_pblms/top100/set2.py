@@ -246,3 +246,17 @@ class Solution(object):
             if counts[num] > (n/2):
                 return num
         
+class Solution(object):
+    def sortedSquares(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+
+        result = []
+
+        for num in nums:
+            result.append(num*num)
+        result.sort()
+        return result
+        

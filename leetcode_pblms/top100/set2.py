@@ -188,3 +188,45 @@ class Solution:
 
         backtrack(0)
         return res
+
+
+class Solution(object):
+    def isValidSudoku(self, board):
+        """
+        :type board: List[List[str]]
+        :rtype: bool
+        """
+        rows = {}
+        cols = {}
+        boxes = {}
+
+        for i in range(9):
+            for j in range(9):
+                val = board[i][j]
+                if val == ".":
+                    continue
+                if i not in rows:
+                    rows[i] = set()
+                if val in rows[i]:
+                    return False
+                rows[i].add(val)
+
+                if j not in cols:
+                    cols[j] = set()
+                if val in cols[j]:
+                    return False
+                cols[j].add(val)
+
+                box_row = i // 3
+                box_col = j // 3
+
+                if (box_row,box_col) not in boxes:
+                    boxes[(box_row,box_col)] = set()
+                if val in boxes[(box_row,box_col)]:
+                    return False
+                boxes[(box_row,box_col)].add(val)
+        return True
+
+                
+            
+        

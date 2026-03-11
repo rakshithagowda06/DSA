@@ -285,7 +285,7 @@ def threeSum(nums):
         if i > 0 and nums[i] == nums[i-1]:
             continue
         
-        # step 4 - two pointers
+        # step 4 - two pointers 
         left = i + 1
         right = len(nums) - 1
         fixed = nums[i]

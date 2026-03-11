@@ -275,4 +275,39 @@ class Solution(object):
             right -= 1
             
 
+def threeSum(nums):
+    result = []
+    nums.sort()
+    
+    # step 3 - fix one number
+    for i in range(len(nums)):
+        # skip duplicates for fixed
+        if i > 0 and nums[i] == nums[i-1]:
+            continue
         
+        # step 4 - two pointers
+        left = i + 1
+        right = len(nums) - 1
+        fixed = nums[i]
+
+        while left < right:
+            current_sum = nums[left] + nums[right]
+            
+            if current_sum > -fixed:
+                right -= 1
+            elif current_sum < -fixed:
+                left += 1
+            else:
+                # found triplet!
+                result.append([fixed, nums[left], nums[right]])
+                
+                # skip duplicates for left and right
+                while left < right and nums[left] == nums[left + 1]:
+                    left += 1
+                while left < right and nums[right] == nums[right - 1]:
+                    right -= 1
+                
+                left += 1
+                right -= 1
+        
+    return result

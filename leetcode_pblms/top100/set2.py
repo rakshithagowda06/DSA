@@ -331,4 +331,33 @@ class Solution(object):
                 stack.append(stack[-1] + stack[-2])
         return sum(stack)
         
+class Solution(object):
+    def evalRPN(self, tokens):
+        """
+        :type tokens: List[str]
+        :rtype: int
+        """
+        stack = []
+
+        for token in tokens:
+            if token not in ['+','-','/','*']:
+               stack.append(int(token))
+            elif token=='+':
+                b=stack.pop()
+                a=stack.pop()
+                stack.append(a+b)
+            elif token=='-':
+                b=stack.pop()
+                a=stack.pop()
+                stack.append(a-b)
+            elif token=='*':
+                b=stack.pop()
+                a=stack.pop()
+                stack.append(a*b)
+            elif token=='/':
+                b=stack.pop()
+                a=stack.pop()
+                stack.append(int(float(a)/b))
+        return stack[-1]    
+            
         

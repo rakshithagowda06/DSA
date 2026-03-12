@@ -360,4 +360,20 @@ class Solution(object):
                 stack.append(int(float(a)/b))
         return stack[-1]    
             
+class Solution(object):
+    def dailyTemperatures(self, temperatures):
+        """
+        :type temperatures: List[int]
+        :rtype: List[int]
+        """
+        stack = []
+        n = len(temperatures)
+        answers = [0] * n
+        for i in range(n):
+            current_sum = temperatures[i]
+            while stack and current_sum > temperatures[stack[-1]]:
+                prev_index = stack.pop()
+                answers[prev_index] = i - prev_index
+            stack.append(i)
+        return answers
         

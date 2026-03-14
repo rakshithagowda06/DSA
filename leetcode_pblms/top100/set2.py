@@ -444,4 +444,6 @@ class Solution(object):
             prev = curr
             curr = next_node
         return prev
-        
+
+def get_sum(a,b):
+    return a+b

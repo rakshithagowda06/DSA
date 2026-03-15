@@ -454,3 +454,6 @@ def get_diff(a,b):
 def get_cube(a):
     return (a*a*a)
 
+def get_square(a):
+    return a*a
+

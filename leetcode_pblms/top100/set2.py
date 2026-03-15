@@ -450,3 +450,7 @@ def get_sum(a,b):
 
 def get_diff(a,b):
     return a-b
+
+def get_cube(a):
+    return (a*a*a)
+

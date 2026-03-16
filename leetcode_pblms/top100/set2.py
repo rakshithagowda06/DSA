@@ -459,3 +459,6 @@ def get_square(a):
 
 def get_same_str(s):
     return s
+
+def get_str_with_no(s):
+    return s + '123'

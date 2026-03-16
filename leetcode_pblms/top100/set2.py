@@ -457,3 +457,5 @@ def get_cube(a):
 def get_square(a):
     return a*a
 
+def get_same_str(s):
+    return s

@@ -466,3 +466,6 @@ def get_str_with_no(s):
 def get_cube(a):
     return a*a*a
 
+def get_name(name):
+    return name
+

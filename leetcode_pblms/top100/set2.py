@@ -462,3 +462,7 @@ def get_same_str(s):
 
 def get_str_with_no(s):
     return s + '123'
+
+def get_cube(a):
+    return a*a*a
+
